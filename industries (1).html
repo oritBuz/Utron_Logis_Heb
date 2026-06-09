@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תעשיות ושירותים | יוטרון אינטרה-לוגיסטיקה</title>
+<meta name="description" content="יוטרון מקימה מחסנים אוטומטיים בתעשיות מגוונות — פארמה, מזון, קמעונאות, קירור עמוק ועוד. מייעוץ ותכנון ועד הקמה ותמיכה שוטפת.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown:  #400101;
+  --red:    #f23038;
+  --cream:  #FAF8F2;
+  --white:  #ffffff;
+  --black:  #000000;
+  --grey50: #808080;
+  --grey20: #cccccc;
+  --font:   'DM Sans', 'Heebo', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  direction: rtl;
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wrap { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
+
+/* ─── HEADER ─── */
+header {
+  background: var(--brown);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 40px;
+}
+.header-inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo { font-size: 28px; font-weight: 800; color: var(--white); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.logo span { color: var(--red); }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.3);
+  padding: 8px 20px;
+  transition: border-color .2s, background .2s;
+}
+.back-btn:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+/* ─── PAGE HERO ─── */
+.page-hero {
+  background: var(--white);
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--cream);
+}
+.page-hero-inner { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
+.page-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 18px;
+}
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.page-hero p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 640px;
+}
+
+/* ─── INDUSTRIES BLOCKS (image + text alternating) ─── */
+.industries-blocks { background: var(--white); }
+
+.ind-block {
+  display: flex;
+  align-items: stretch;
+  min-height: 380px;
+  border-bottom: 1px solid var(--cream);
+}
+.ind-block:nth-child(even) { flex-direction: row-reverse; }
+
+.ind-block-img {
+  width: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--cream);
+  position: relative;
+  min-height: 340px;
+}
+.ind-block-img-inner {
+  position: absolute;
+  inset: 0;
+  background-size: cover !important;
+  background-position: center !important;
+  transition: transform .5s ease;
+}
+.ind-block:hover .ind-block-img-inner { transform: scale(1.03); }
+
+.ind-block-text {
+  width: 50%;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+}
+.ind-block:nth-child(even) .ind-block-text { background: var(--cream); }
+
+.ind-kw {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.ind-block-text h2 {
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  line-height: 1.25;
+}
+.ind-block-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+/* ─── SERVICES ─── */
+.services-section {
+  background: var(--cream);
+  padding: 80px 0;
+}
+.sec-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+  display: block;
+}
+.services-section h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--brown);
+  margin-bottom: 50px;
+}
+.services-list { }
+.service-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-right: 3px solid var(--red);
+  background: var(--white);
+  margin-bottom: 8px;
+  transition: border-right-width .2s, padding-right .2s;
+}
+.service-item:hover { border-right-width: 6px; padding-right: 21px; }
+.service-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: #aaa;
+  line-height: 1.6;
+  min-width: 28px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.service-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 5px;
+}
+.service-content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ─── CTA ─── */
+.ind-cta {
+  background: var(--white);
+  padding: 70px 40px;
+  text-align: center;
+}
+.ind-cta p {
+  font-size: 18px;
+  color: #555;
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+  padding: 16px 40px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn-primary:hover { background: #d01e25; border-color: #d01e25; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #111;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-text { font-size: 13px; color: var(--grey50); }
+.footer-logo { font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: .1em; }
+.footer-logo span { color: var(--red); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .ind-block,
+  .ind-block:nth-child(even) { flex-direction: column; }
+  .ind-block-img, .ind-block-text { width: 100%; }
+  .ind-block-img { min-height: 240px; }
+  .ind-block-text { padding: 40px 24px; }
+  .wrap, .page-hero-inner, .ind-cta, header, footer { padding-left: 20px; padding-right: 20px; }
+  .services-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="utron-hebrew-landing.html" class="logo">UTRON <span>·</span> IL</a>
+    <a href="utron-hebrew-landing.html" class="back-btn">← חזרה לעמוד הראשי</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-kicker">תעשיות ושירותים</span>
+    <h1>ניסיון בכל תחום —<br>שירות לכל שלב</h1>
+    <p>יוטרון מקימה מחסנים אוטומטיים בתעשיות מגוונות. בין אם מדובר בתנאי קירור, דרישות רגולציה קפדניות או נפח SKU גבוה — לנו יש הניסיון הרלוונטי.</p>
+  </div>
+</section>
+
+<!-- INDUSTRIES BLOCKS -->
+<div class="industries-blocks">
+
+  <div class="ind-block">
+    <div class="ind-block-img">
+      <div class="ind-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/PHOTO-2020-05-20-15-37-11.jpg.webp') no-repeat center center; background-size: cover;"></div>
+    </div>
+    <div class="ind-block-text">
+      <div class="ind-kw">לוגיסטיקה ו-3PL</div>
+      <h2>לוגיסטיקה ו-3PL</h2>
+      <p>פתרונות מחסן אוטומטי עבור ספקי לוגיסטיקה המנהלים מספר לקוחות ומוצרים במקביל. מערכות גמישות שמאפשרות הפרדה בין לקוחות, ניהול מלאי בזמן אמת ותפוקה גבוהה גם בעונות שיא.</p>
+    </div>
+  </div>
+
+  <div class="ind-block">
+    <div class="ind-block-img">
+      <div class="ind-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/FOR-SMALL-AND-MIDSIZE-LOADS-1-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
+    </div>
+    <div class="ind-block-text">
+      <div class="ind-kw">פארמה ורפואה</div>
+      <h2>פארמה ורפואה</h2>
+      <p>מחסנים אוטומטיים העומדים בדרישות GMP ו-GDP — מעקב סדרות מלא, בקרת טמפרטורה, תיעוד אוטומטי ועמידה בכל דרישות הרגולציה הפרמצבטית. פרויקטים עם טבע, מאייר פארמה ועוד.</p>
+    </div>
+  </div>
+
+  <div class="ind-block">
+    <div class="ind-block-img">
+      <div class="ind-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/resized_Pick-to-Tote_PTT_02-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
+    </div>
+    <div class="ind-block-text">
+      <div class="ind-kw">קמעונאות ו-E-Commerce</div>
+      <h2>קמעונאות ו-E-Commerce</h2>
+      <p>פתרונות לניהול נפח SKU גבוה, עונתיות חדה ומשלוח מהיר ללקוח הסופי. מערכות Goods-to-Person שמאפשרות עיבוד אלפי הזמנות ביום — ללא גיוס כוח אדם זמני בעונות שיא.</p>
+    </div>
+  </div>
+
+  <div class="ind-block">
+    <div class="ind-block-img">
+      <div class="ind-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/IMG_0776-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
+    </div>
+    <div class="ind-block-text">
+      <div class="ind-kw">מזון ומשקאות</div>
+      <h2>מזון ומשקאות</h2>
+      <p>מחסני מזון אוטומטיים בתנאי קירור, הקפאה עמוקה ואחסון מעורב — עם מעקב תאריך תפוגה אוטומטי, ניהול FIFO מלא והפחתת חשיפת עובדים לתנאי קור קיצוניים. פרויקטים עם תנובה, שטראוס ועוד.</p>
+    </div>
+  </div>
+
+  <div class="ind-block">
+    <div class="ind-block-img">
+      <div class="ind-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/PHOTO-2020-05-20-15-37-11.jpg.webp') no-repeat center center; background-size: cover;"></div>
+    </div>
+    <div class="ind-block-text">
+      <div class="ind-kw">קירור ואיקור עמוק</div>
+      <h2>קירור ואיקור עמוק</h2>
+      <p>מחסנים אוטומטיים בטמפרטורות שליליות — מפחיתים חשיפת עובדים, מגבירים יעילות ומורידים עלויות אנרגיה. מערכות AS/RS מתוכננות במיוחד לתפקוד אמין בתנאי קור קיצוניים.</p>
+    </div>
+  </div>
+
+  <div class="ind-block">
+    <div class="ind-block-img">
+      <div class="ind-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/FOR-SMALL-AND-MIDSIZE-LOADS-1-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
+    </div>
+    <div class="ind-block-text">
+      <div class="ind-kw">חלקי חילוף ו-MRO</div>
+      <h2>חלקי חילוף ו-MRO</h2>
+      <p>אחסון ואחזור של עשרות אלפי SKU — מערכות AS/RS ייעודיות לניהול חלקי חילוף, ציוד תחזוקה ומוצרים בגדלים ומשקלים שונים. זמני אחזור מהירים ודיוק מלאי גבוה.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="wrap">
+    <span class="sec-label">שירותים</span>
+    <h2>מקצה לקצה — בחוזה אחד</h2>
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-content">
+          <h4>ייעוץ ותכנון מחסן</h4>
+          <p>בחינת שטח, נפחים, תהליכים ותקציב — ואז תכנון מדויק.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-content">
+          <h4>עיצוב מפורט והנדסת מערכות</h4>
+          <p>תכניות הנדסיות, סימולציות, תכנון כושר ייצור וגיבוי — תוכניות מפורטות לפני כל הקמה.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-content">
+          <h4>אינטגרציה ופרויקט מקצה לקצה</h4>
+          <p>הקמה, חיבור לכלל מערכות המחסן (WMS, ERP, ציוד קיים) והפעלה — הכל בחוזה אחד, אחריות אחת.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-content">
+          <h4>תמיכה ושירות 24/7</h4>
+          <p>מהנדסי שירות ישראליים בשטח ובמוקד. חוזי תמיכה מותאמים — תגובה מהירה, SLA מוגדר מראש.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <div class="service-content">
+          <h4>שדרוגים ומחסנים קיימים</h4>
+          <p>אוטומציה של מחסן פעיל ללא הפסקת פעילות — שדרוג הדרגתי, אינטגרציה עם ציוד קיים.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">06</div>
+        <div class="service-content">
+          <h4>ניהול נתונים ובינה מלאכותית</h4>
+          <p>ניתוח ביצועי מחסן בזמן אמת, דשבורדים לניהול ועיבוד נתונים לשיפור מתמיד של תהליכים.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ind-cta">
+  <div class="wrap">
+    <p>רוצים לדעת איך יוטרון יכולה לעזור בתעשייה שלכם?<br>המומחים שלנו ישמחו לשוחח.</p>
+    <a href="utron-hebrew-landing.html#contact" class="btn-primary">לשיחת ייעוץ ראשונית</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">UTRON <span>·</span> IL</div>
+  <div class="footer-text">יוטרון אוטומציה | כל הזכויות שמורות ©</div>
+</footer>
+
+</body>
+</html>

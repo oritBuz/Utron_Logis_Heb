@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>פרויקטים מובילים | יוטרון אינטרה-לוגיסטיקה</title>
+<meta name="description" content="מעל 200 פרויקטי אוטומציה למחסנים בישראל. חברת החשמל, פלאפון, תנובה, שטראוס, טבע ועוד. יוטרון — מובילי האוטומציה בישראל מאז 1990.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown:  #400101;
+  --red:    #f23038;
+  --cream:  #FAF8F2;
+  --white:  #ffffff;
+  --black:  #000000;
+  --grey50: #808080;
+  --grey20: #cccccc;
+  --font:   'DM Sans', 'Heebo', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  direction: rtl;
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wrap { max-width: 1260px; margin: 0 auto; padding: 0 30px; }
+
+/* ─── HEADER ─── */
+header {
+  background: var(--brown);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 30px;
+}
+.header-inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo { font-size: 28px; font-weight: 800; color: var(--white); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.logo span { color: var(--red); }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.3);
+  padding: 8px 20px;
+  transition: border-color .2s, background .2s;
+}
+.back-btn:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+/* ─── PAGE HERO ─── */
+.page-hero {
+  background: var(--white);
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--cream);
+}
+.page-hero-inner { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
+.page-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 18px;
+}
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.page-hero p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 640px;
+}
+.page-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.page-stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.page-stat-label { font-size: 13px; color: #777; font-weight: 300; }
+
+/* ─── PROJECTS GRID ─── */
+.projects-section { padding: 80px 0; background: var(--white); }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.proj-card {
+  background: var(--cream);
+  border-right: 4px solid var(--red);
+  padding: 40px 36px;
+  transition: transform .2s, box-shadow .2s;
+}
+.proj-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(64,1,1,.1); }
+.proj-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+  text-align: left;
+}
+.proj-card h3 {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 14px;
+  line-height: 1.3;
+  text-align: right;
+}
+.proj-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.proj-divider {
+  border: none;
+  border-top: 1px solid rgba(64,1,1,.1);
+  margin-bottom: 20px;
+}
+.kpi-list { list-style: none; }
+.kpi-list li {
+  font-size: 14px;
+  color: var(--brown);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(64,1,1,.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.kpi-list li:last-child { border-bottom: none; }
+.kpi-arrow {
+  color: var(--red);
+  font-size: 16px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+/* ─── CTA ─── */
+.projects-cta {
+  background: var(--white);
+  padding: 70px 0;
+  text-align: center;
+}
+.projects-cta p {
+  font-size: 18px;
+  color: #555;
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+  padding: 16px 40px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn-primary:hover { background: #d01e25; border-color: #d01e25; }
+.btn-outline-brown {
+  display: inline-block;
+  background: transparent;
+  color: var(--brown);
+  border: 2px solid var(--brown);
+  padding: 16px 40px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 16px;
+  transition: background .2s, color .2s;
+}
+.btn-outline-brown:hover { background: var(--brown); color: var(--white); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #111;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-text { font-size: 13px; color: var(--grey50); }
+.footer-logo { font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: .1em; }
+.footer-logo span { color: var(--red); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .page-stats { gap: 28px; }
+}
+@media (max-width: 600px) {
+  .projects-cta .btn-outline-brown { margin-right: 0; margin-bottom: 16px; display: block; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="utron-hebrew-landing.html" class="logo">UTRON <span>·</span> IL</a>
+    <a href="utron-hebrew-landing.html" class="back-btn">← חזרה לעמוד הראשי</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-kicker">פרויקטים מובילים</span>
+    <h1>אוטומציה שעובדת.<br>בשביל מי שחשוב.</h1>
+    <p>מאז 1990, יוטרון הקימה מעל 200 מערכות אוטומציה למחסנים בישראל — עבור חברות מהגדולות במשק. כל פרויקט מותאם לצרכי הלקוח, מוקם ללא הפסקת פעילות, ומלווה בתמיכה שוטפת לאורך שנים.</p>
+    <div class="page-stats">
+      <div>
+        <div class="page-stat-num">200+</div>
+        <div class="page-stat-label">פרויקטים בישראל</div>
+      </div>
+      <div>
+        <div class="page-stat-num">35+</div>
+        <div class="page-stat-label">שנות ניסיון</div>
+      </div>
+      <div>
+        <div class="page-stat-num">99.9%</div>
+        <div class="page-stat-label">זמינות מערכת ממוצעת</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="wrap">
+    <div class="projects-grid">
+
+      <!-- חברת החשמל -->
+      <div class="proj-card">
+        <div class="proj-tag">חברת החשמל לישראל</div>
+        <h3>מרכז לוגיסטיקה אוטומטי — עכו</h3>
+        <p>הקמת AS/RS מלא עבור חברת החשמל לישראל, כולל מסועים, מערכת ניהול ומלקטים אוטומטיים. הפרויקט הוקם ללא הפסקת פעילות שוטפת.</p>
+        <hr class="proj-divider">
+        <ul class="kpi-list">
+          <li><span>קיצור זמני עיבוד הזמנות — 62%↓</span><span class="kpi-arrow">↑</span></li>
+          <li><span>דיוק מלאי לאחר הפעלה — 99.9%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>ימי השבתה תפעוליים — 0</span><span class="kpi-arrow">↑</span></li>
+        </ul>
+      </div>
+
+      <!-- פלאפון -->
+      <div class="proj-card">
+        <div class="proj-tag">פלאפון תקשורת</div>
+        <h3>מחסן חלקי חילוף לאומי — אוטומציה מלאה</h3>
+        <p>אינטגרציה של מערכת AS/RS, מסועים ותוכנת WCS עבור מחסן חלקי חילוף ארצי. הפתרון תומך בעשרות אלפי SKU ומשרת אלפי לקוחות מדי יום.</p>
+        <hr class="proj-divider">
+        <ul class="kpi-list">
+          <li><span>הפחתת כוח אדם בפיקינג — 40%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>3 פלטפורמות OEM תחת WCS אחד</span><span class="kpi-arrow">↑</span></li>
+          <li><span>פעילות רציפה ללא תקלות 24/7</span><span class="kpi-arrow">↑</span></li>
+        </ul>
+      </div>
+
+      <!-- תנובה -->
+      <div class="proj-card">
+        <div class="proj-tag">קבוצת תנובה</div>
+        <h3>מחסן מזון אוטומטי — קירור ומעקב מלאי</h3>
+        <p>פתרון אוטומציה לוגיסטית עבור מחסן מזון בתנאי קירור, כולל מסועים, מגדלי אחסון אוטומטיים ומערכת ניהול מלאי בזמן אמת.</p>
+        <hr class="proj-divider">
+        <ul class="kpi-list">
+          <li><span>עלייה בתפוקת טיפול בהזמנות — 38%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>עמידה ב-SLA של זמינות — 99.6%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>יכולת שיא כפולה לעומת לפני האוטומציה</span><span class="kpi-arrow">↑</span></li>
+        </ul>
+      </div>
+
+      <!-- שטראוס -->
+      <div class="proj-card">
+        <div class="proj-tag">קבוצת שטראוס</div>
+        <h3>מחסן הפצה אוטומטי — מרכז לוגיסטי ראשי</h3>
+        <p>הקמת מערכת אוטומציה מלאה למחסן ההפצה הראשי של שטראוס, כולל AS/RS לפלטות, מסועים ומערכת WCS משולבת עם ה-ERP הקיים.</p>
+        <hr class="proj-divider">
+        <ul class="kpi-list">
+          <li><span>קיצור זמן הכנת הזמנה — 55%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>דיוק הזמנות — 99.8%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>הפחתת עלויות תפעול שוטפות — 30%</span><span class="kpi-arrow">↑</span></li>
+        </ul>
+      </div>
+
+      <!-- טבע -->
+      <div class="proj-card">
+        <div class="proj-tag">טבע תעשיות פרמצבטיות</div>
+        <h3>מחסן תרופות אוטומטי — עמידה בתקני GMP</h3>
+        <p>פתרון אחסון ושליפה אוטומטי עבור מחסן תרופות הכולל בקרת טמפרטורה, מעקב סדרות מלא ועמידה בדרישות הרגולציה הפרמצבטית הקפדנית.</p>
+        <hr class="proj-divider">
+        <ul class="kpi-list">
+          <li><span>עמידה מלאה בדרישות GMP ו-GDP</span><span class="kpi-arrow">↑</span></li>
+          <li><span>מעקב סדרות ותאריך תפוגה — 100%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>הפחתת שגיאות ליקוט — 95%</span><span class="kpi-arrow">↑</span></li>
+        </ul>
+      </div>
+
+      <!-- קוקה קולה -->
+      <div class="proj-card">
+        <div class="proj-tag">קוקה-קולה ישראל</div>
+        <h3>מחסן משקאות אוטומטי — תפוקה גבוהה</h3>
+        <p>מערכת אוטומציה לאחסון ושליפה של פלטות משקאות בנפח גבוה, עם ניהול FIFO מלא, אינטגרציה ל-SAP ותמיכה בעונות שיא.</p>
+        <hr class="proj-divider">
+        <ul class="kpi-list">
+          <li><span>עלייה בתפוקה יומית — 45%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>ניהול FIFO אוטומטי — 100%</span><span class="kpi-arrow">↑</span></li>
+          <li><span>עמידה בעומסי שיא ללא גיוס כוח אדם</span><span class="kpi-arrow">↑</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="projects-cta">
+  <div class="wrap">
+    <p>אלה רק חלק מהפרויקטים שביצענו.<br>לצפייה במגוון המלא של הפרויקטים שלנו באתר הראשי:</p>
+    <a href="https://utron.com/intralogistics/logistics-projects/" target="_blank" class="btn-outline-brown">לצפייה בכל הפרויקטים ←</a>
+    <a href="utron-hebrew-landing.html#contact" class="btn-primary">לשיחת ייעוץ ראשונית</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">UTRON <span>·</span> IL</div>
+  <div class="footer-text">יוטרון אוטומציה | כל הזכויות שמורות ©</div>
+</footer>
+
+</body>
+</html>
