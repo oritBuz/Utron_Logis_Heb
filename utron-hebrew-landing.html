@@ -81,32 +81,65 @@ header {
 }
 .cta-header:hover { background: #d01e25; transform: translateY(-1px); }
 
-/* ─── TABS ─── */
-.tabs-nav {
-  background: #FAF8F2;
+/* ─── SECTION CARDS ─── */
+.section-cards {
+  padding: 80px 0;
+  background: var(--white);
+}
+.section-cards .sec-label { display: block; text-align: center; margin-bottom: 14px; }
+.section-cards .sec-h2 { text-align: center; color: var(--brown); margin-bottom: 60px; }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.sec-card {
+  border-top: 4px solid var(--red);
+  background: var(--cream);
+  padding: 44px 36px;
   display: flex;
-  justify-content: center;
-  gap: 0;
-  border-bottom: 2px solid var(--brown);
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .2s, box-shadow .2s;
 }
-.tab-btn {
-  background: none;
-  border: none;
+.sec-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(64,1,1,.1); }
+.sec-card-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.sec-card h3 {
+  font-size: 22px;
+  font-weight: 700;
   color: var(--brown);
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 18px 40px;
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-  transition: color .2s, border-color .2s;
-  white-space: nowrap;
+  margin-bottom: 18px;
+  line-height: 1.3;
 }
-.tab-btn:hover { color: var(--red); }
-.tab-btn.active { color: var(--brown); border-bottom-color: var(--red); font-weight: 700; }
-
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
+.sec-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+.sec-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--brown);
+  color: var(--brown);
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s, color .2s, border-color .2s;
+  align-self: flex-start;
+}
+.sec-card-btn:hover { background: var(--red); border-color: var(--red); color: var(--white); }
 
 /* ─── HERO ─── */
 .hero {
@@ -756,8 +789,7 @@ footer {
   .tech-cards      { grid-template-columns: 1fr; }
   .why-grid        { grid-template-columns: 1fr 1fr; }
   .industries-grid { grid-template-columns: 1fr 1fr; }
-  .tabs-nav        { overflow-x: auto; justify-content: flex-start; }
-  .tab-btn         { padding: 16px 24px; font-size: 14px; }
+  .cards-grid { grid-template-columns: 1fr; }
   .hero-stats      { gap: 28px; }
   .form-row        { flex-direction: column; }
   .contact-form    { padding: 32px 24px; }
@@ -815,350 +847,44 @@ footer {
 </div>
 
 <!-- TABS -->
-<div id="tabs">
-  <nav class="tabs-nav">
-    <button class="tab-btn active" data-tab="tab1">פרויקטים מובילים</button>
-    <button class="tab-btn" data-tab="tab2">טכנולוגיות ופתרונות</button>
-    <button class="tab-btn" data-tab="tab3">תעשיות ושירותים</button>
-  </nav>
+<!-- SECTION CARDS -->
+<section class="section-cards">
+  <div class="wrap">
+    <span class="sec-label">מה אנחנו עושים</span>
+    <h2 class="sec-h2">פתרונות אוטומציה מקצה לקצה</h2>
+    <div class="cards-grid">
 
-  <!-- TAB 1 -->
-  <div class="tab-panel active" id="tab1">
-    <section class="tab1-intro">
-      <div class="wrap">
-        <span class="sec-label">פרויקטים מובילים</span>
-        <h2 class="sec-h2">אוטומציה שעובדת. בשבילכם</h2>
-        <p class="sec-body">יוטרון הקימה עשרות מערכות מחסן אוטומטי עבור כמה מהארגונים הגדולים בישראל. כל פרויקט מותאם לצרכי הלקוח – לפי שטח, נפח, תחום ותקציב.</p>
-      </div>
-    </section>
-
-    <div class="wrap">
-      <div class="project-cards">
-
-        <div class="project-card">
-          <div class="project-tag">חברת החשמל לישראל</div>
-          <h3>מרכז לוגיסטיקה אוטומטי — עכו</h3>
-          <p>הקמת AS/RS מלא עבור חברת החשמל לישראל, כולל מסועים, מערכת ניהול ומלקטים אוטומטיים. הפרויקט הוקם ללא הפסקת פעילות שוטפת.</p>
-          <ul class="kpi-list">
-            <li>קיצור זמני עיבוד הזמנות — 62%↓</li>
-            <li>דיוק מלאי לאחר הפעלה — 99.9%</li>
-            <li>ימי השבתה תפעוליים — 0</li>
-          </ul>
+      <div class="sec-card">
+        <div>
+          <div class="sec-card-num">01</div>
+          <h3>פרויקטים מובילים</h3>
+          <p>מאז 1990, יוטרון הקימה מעל 200 מערכות אוטומציה למחסנים בישראל — עבור חברות מהגדולות במשק, בתעשיות מגוונות: פארמה, מזון, קמעונאות, תשתיות ועוד. כל פרויקט בנוי על ניסיון מצטבר של עשרות שנה, ומיושם עם הטכנולוגיות המתקדמות ביותר בעולם. בואו להכיר את מגוון הפרויקטים שלנו.</p>
         </div>
-
-        <div class="project-card">
-          <div class="project-tag">פלאפון תקשורת</div>
-          <h3>מחסן חלקי חילוף לאומי — אוטומציה מלאה</h3>
-          <p>אינטגרציה של מערכת AS/RS, מסועים ותוכנת WCS עבור מחסן חלקי חילוף ארצי. הפתרון תומך בעשרות אלפי SKU ומשרת אלפי לקוחות מדי יום.</p>
-          <ul class="kpi-list">
-            <li>הפחתת כוח אדם בפיקינג — 40%</li>
-            <li>3 פלטפורמות OEM תחת WCS אחד</li>
-            <li>פעילות רציפה ללא תקלות 24/7</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <div class="project-tag">קבוצת תנובה</div>
-          <h3>מחסן מזון אוטומטי — קירור ומעקב מלאי</h3>
-          <p>פתרון אוטומציה לוגיסטית עבור מחסן מזון בתנאי קירור, כולל מסועים, מגדלי אחסון אוטומטיים ומערכת ניהול מלאי בזמן אמת.</p>
-          <ul class="kpi-list">
-            <li>עלייה בתפוקת טיפול בהזמנות — 38%</li>
-            <li>עמידה ב-SLA של זמינות — 99.6%</li>
-            <li>יכולת שיא כפולה לעומת לפני האוטומציה</li>
-          </ul>
-        </div>
-
+        <a href="projects.html" class="sec-card-btn">לפרויקטים שלנו ←</a>
       </div>
-    </div>
 
-    <!-- TESTIMONIALS -->
-    <div class="testimonials-wrap">
-      <div class="wrap">
-        <span class="sec-label" style="color:var(--red)">מה אומרים עלינו</span>
-        <h2 class="sec-h2">לקוחות מדברים</h2>
-        <div class="testi-grid">
-          <div class="testi-card">
-            <div>
-              <div class="testi-qq">"</div>
-              <p class="testi-quote">מערכות יוטרון שיפרו משמעותית את היעילות הלוגיסטית שלנו וקיצרו את זמני ההזמנה והאיסוף. הצוות היה מקצועי ומדויק לאורך כל התהליך.</p>
-            </div>
-            <div class="testi-bottom">
-              <div class="testi-logo">
-                <img src="https://utron.com/wp-content/uploads/2024/11/חברת-החשמל.png.webp" alt="חברת החשמל">
-              </div>
-              <div class="testi-info">
-                <div class="testi-name">אסף שבי</div>
-                <div class="testi-org">מנהל תפעול ותחזוקה, מרכז לוגיסטיקה אוטומטי — חברת החשמל לישראל</div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card">
-            <div>
-              <div class="testi-qq">"</div>
-              <p class="testi-quote">יוטרון היא שותפת שלנו לרציפות עסקית ועקביות תפעולית — מבטיחה שנוכל לשרת אלפי לקוחות מדי יום במקצועיות ואחריות.</p>
-            </div>
-            <div class="testi-bottom">
-              <div class="testi-logo">
-                <img src="https://utron.com/wp-content/uploads/2024/11/תנובה.png.webp" alt="תנובה">
-              </div>
-              <div class="testi-info">
-                <div class="testi-name">נתן</div>
-                <div class="testi-org">מנהל תפעול, תנובה</div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card">
-            <div>
-              <div class="testi-qq">"</div>
-              <p class="testi-quote">המערכת האוטומטית של יוטרון עובדת חלק מהיום הראשון. קיבלנו פתרון מקומי המותאם בדיוק לצרכינו, עם תמיכה מלאה של אנשי מקצוע מנוסים.</p>
-            </div>
-            <div class="testi-bottom">
-              <div class="testi-logo">
-                <img src="https://utron.com/wp-content/uploads/2024/11/Scope.png.webp" alt="סקופ">
-              </div>
-              <div class="testi-info">
-                <div class="testi-name">דודו שילה</div>
-                <div class="testi-org">סמנכ"ל, קבוצת סקופ מתכות</div>
-              </div>
-            </div>
-          </div>
+      <div class="sec-card">
+        <div>
+          <div class="sec-card-num">02</div>
+          <h3>טכנולוגיות ופתרונות</h3>
+          <p>יוטרון אינה קשורה לספק ציוד יחיד — אנחנו בוחרים את הטכנולוגיה הנכונה עבורכם. מ-AS/RS שמנצל כל מטר גובה במחסן, דרך מסועים ורובוטים אוטונומיים, ועד תוכנת WCS שפיתחנו בעצמנו. הכל מתוכנן, מוקם ומנוהל תחת קורת גג אחת — עם אחריות מלאה מקצה לקצה. גלו את הטכנולוגיות שמאחורי המחסנים שלנו.</p>
         </div>
+        <a href="technologies.html" class="sec-card-btn">לטכנולוגיות שלנו ←</a>
       </div>
-    </div>
 
-    <div class="tab1-cta">
-      <div class="wrap">
-        <a href="#contact" class="btn-primary">לשיחת ייעוץ ראשונית ללא עלות</a>
+      <div class="sec-card">
+        <div>
+          <div class="sec-card-num">03</div>
+          <h3>תעשיות ושירותים</h3>
+          <p>כל תעשייה מציבה אתגרים שונים — דרישות רגולציה קפדניות בפארמה, תנאי קירור קיצוניים במזון, עונתיות חדה בקמעונאות. יוטרון מביאה ניסיון עמוק בכל אחד מהתחומים הללו, ומתאימה את הפתרון לצרכים הספציפיים של כל לקוח — מייעוץ ותכנון ועד הקמה, הפעלה ותמיכה שוטפת. גלו כיצד יוטרון עובדת בתעשייה שלכם.</p>
+        </div>
+        <a href="industries.html" class="sec-card-btn">לתעשיות ושירותים ←</a>
       </div>
+
     </div>
   </div>
+</section>
 
-  <!-- TAB 2 -->
-  <div class="tab-panel" id="tab2">
-    <section class="tab2-intro">
-      <div class="wrap">
-        <span class="sec-label">טכנולוגיות ופתרונות</span>
-        <h2 class="sec-h2">טכנולוגיות שונות – אינטגרטור אחד</h2>
-        <p class="sec-body">יוטרון אינה קשורה לספק ציוד יחיד. אנחנו מתכננים את הפתרון הנכון עבורכם ומשלבים את הטכנולוגיות המתאימות ביותר לצרכי המחסן שלכם – תחת תוכנת ניהול אחת ואחריות מלאה.</p>
-      </div>
-    </section>
-
-    <div class="tech-blocks">
-
-        <div class="tech-block">
-          <div class="tech-block-img">
-            <div class="tech-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/PHOTO-2020-05-20-15-37-11.jpg.webp') no-repeat center center; background-size: cover;"></div>
-          </div>
-          <div class="tech-block-text">
-            <div class="tech-kw">מערכת אחסון ושליפה אוטומטית</div>
-            <h3>AS/RS — מערכות אחסון ושליפה אוטומטיות</h3>
-            <p>מערכות אחסון אוטומטיות מאפשרות לנצל טוב יותר את שטח הרצפה ולאחסן סחורה לגובה מעל 40 מטר, להפחית את התלות בכוח אדם ולשפר את השירות ללקוחות.</p>
-            <ul class="tech-bullets">
-              <li>מערכות אחסון מבוססות עגורנים</li>
-              <li>מערכות אחסון מבוססות שאטלים (Way4 Shuttle)</li>
-              <li>VLM — מגדלי אחסון אוטומטיים ויחידות mini-load</li>
-              <li>תואם למחסני קירור וקירור עמוק</li>
-            </ul>
-            <a href="#contact" class="btn-read-more">קראו עוד ←</a>
-          </div>
-        </div>
-
-        <div class="tech-block">
-          <div class="tech-block-img">
-            <div class="tech-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/FOR-SMALL-AND-MIDSIZE-LOADS-1-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
-          </div>
-          <div class="tech-block-text">
-            <div class="tech-kw">קווי שינוע אוטומטיים למחסן</div>
-            <h3>מסועים ומערכות שינוע</h3>
-            <p>קווי שינוע יוצרים זרימה רציפה ואוטומטית של סחורה בין האזורים השונים במרכז הלוגיסטי.</p>
-            <ul class="tech-bullets">
-              <li>מערכת מסועים</li>
-              <li>שינוע אוטונומי באמצעות AMR/AGV</li>
-              <li>שינוע באמצעות שאטלים</li>
-            </ul>
-            <a href="#contact" class="btn-read-more">קראו עוד ←</a>
-          </div>
-        </div>
-
-        <div class="tech-block">
-          <div class="tech-block-img">
-            <div class="tech-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/resized_Pick-to-Tote_PTT_02-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
-          </div>
-          <div class="tech-block-text">
-            <div class="tech-kw">Goods to Person — ליקוט והכנת הזמנות</div>
-            <h3>מערכות אוטומטיות לליקוט</h3>
-            <p>מערכות אוטומטיות המשולבות בפעילות הליקוט מגבירות תפוקה ומייעלות את תהליך הכנת ההזמנות ללקוחות.</p>
-            <ul class="tech-bullets">
-              <li>מערכות שינוע Goods to Person לקיצור זמני ליקוט</li>
-              <li>מערכות הנחייה ויזואלית (PBL) או קולית (PBV)</li>
-              <li>עמדות ליקוט ארגונומיות לשיפור יעילות המלקט</li>
-              <li>רובוטים לליקוט אוטומטי ללא תלות בכוח אדם</li>
-            </ul>
-            <a href="#contact" class="btn-read-more">קראו עוד ←</a>
-          </div>
-        </div>
-
-        <div class="tech-block">
-          <div class="tech-block-img">
-            <div class="tech-block-img-inner" style="background: url('https://utron.com/wp-content/uploads/2024/11/IMG_0776-scaled.jpg.webp') no-repeat center center; background-size: cover;"></div>
-          </div>
-          <div class="tech-block-text">
-            <div class="tech-kw">משטוח ופרוק משטחים אוטומטי</div>
-            <h3>משטוח אוטומטי</h3>
-            <p>אוטומציה לתהליכי משטוח מהווה פתרון להרמת משקלים כבדים, מניעת פציעות והגדלת קצב המשטוח.</p>
-            <ul class="tech-bullets">
-              <li>מכונות משטוח ארגזים ופלסטונים מסוגים שונים</li>
-              <li>תאים רובוטיים למשטוח אריזות (Case Mix Palletizing)</li>
-              <li>תאים רובוטיים לפרוק משטחים</li>
-              <li>שילוב מערכות שינוע לאוטומציה מלאה</li>
-            </ul>
-            <a href="#contact" class="btn-read-more">קראו עוד ←</a>
-          </div>
-        </div>
-
-      </div>
-
-    <!-- SOFTWARE STRIP -->
-    <div class="software-strip">
-      <div class="wrap">
-        <span class="sec-label">מוח התוכנה</span>
-        <h2 class="sec-h2">WCS/WES — מפותח בבית</h2>
-        <p class="sec-body">יוטרון פיתחה בעצמה שכבת תוכנה המנהלת ומתאמת את כלל מערכות המחסן האוטומטי בזמן אמת. המערכת מתחברת ל-WMS קיים, מספקת מפת מחסן חיה ולוח ניהול מלא.</p>
-        <div class="pills">
-          <span class="pill active">WCS [פנימי]</span>
-          <span class="pill active">WES / Orchestration</span>
-          <span class="pill">Manhattan WMS</span>
-          <span class="pill">SAP EWM</span>
-          <span class="pill">Blue Yonder</span>
-          <span class="pill active">מפת מחסן בזמן אמת</span>
-          <span class="pill active">Custom HMI</span>
-          <span class="pill">Körber</span>
-          <span class="pill active">לוח ניהול</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab2-cta">
-      <div class="wrap">
-        <a href="#contact" class="btn-primary">לתיאום הדגמה טכנית</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- TAB 3 -->
-  <div class="tab-panel" id="tab3">
-    <section class="tab3-intro">
-      <div class="wrap">
-        <span class="sec-label">תעשיות ושירותים</span>
-        <h2 class="sec-h2">ניסיון בכל תחום – שירות לכל שלב</h2>
-        <p class="sec-body">יוטרון מקימה מחסנים אוטומטיים בתעשיות מגוונות. בין אם מדובר בתנאי קירור, דרישות רגולציה קפדניות או נפח SKU גבוה – לנו יש הניסיון הרלוונטי.</p>
-      </div>
-    </section>
-
-    <div class="wrap">
-      <div class="industries-grid">
-        <div class="industry-card">
-          <div class="industry-num">01</div>
-          <h4>לוגיסטיקה ו-3PL</h4>
-          <p>פתרונות מחסן אוטומטי עבור ספקי לוגיסטיקה המנהלים מספר לקוחות ומוצרים במקביל.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">02</div>
-          <h4>פארמה ורפואה</h4>
-          <p>מחסנים אוטומטיים העומדים בדרישות GMP, מעקב סדרות ובקרת טמפרטורה.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">03</div>
-          <h4>קמעונאות ו-E-Commerce</h4>
-          <p>פתרונות לניהול נפח SKU גבוה, עונתיות ומשלוח מהיר ללקוח הסופי.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">04</div>
-          <h4>מזון ומשקאות</h4>
-          <p>מחסני מזון אוטומטיים בתנאי קירור, הקפאה עמוקה ואחסון מעורב עם מעקב תאריך תפוגה.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">05</div>
-          <h4>ייצור כללי</h4>
-          <p>אוטומציה לוגיסטית בתוך מפעלי ייצור — WIP, חלקי חילוף ומוצרים מוגמרים.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">06</div>
-          <h4>מטענים מיוחדים</h4>
-          <p>פתרונות אחסון ואחזור למוצרים גדולים, כבדים או בעלי צורות לא סטנדרטיות.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">07</div>
-          <h4>קירור ואיקור עמוק</h4>
-          <p>מחסנים אוטומטיים בטמפרטורות שליליות — מפחיתים חשיפת עובדים ומגבירים יעילות.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-num">08</div>
-          <h4>חלקי חילוף ו-MRO</h4>
-          <p>אחסון ואחזור של עשרות אלפי SKU — מערכות AS/RS ייעודיות.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="services-wrap">
-      <div class="wrap">
-        <span class="sec-label">שירותים</span>
-        <h2 class="sec-h2">מקצה לקצה — בחוזה אחד</h2>
-        <div class="services-list">
-          <div class="service-item">
-            <div class="service-num">01</div>
-            <div class="service-content">
-              <h4>ייעוץ ותכנון מחסן</h4>
-              <p>בחינת שטח, נפחים, תהליכים ותקציב — ואז תכנון מדויק.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-num">02</div>
-            <div class="service-content">
-              <h4>עיצוב מפורט והנדסת מערכות</h4>
-              <p>תכניות הנדסיות, סימולציות, תכנון כושר ייצור וגיבוי — תוכניות מפורטות לפני כל הקמה.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-num">03</div>
-            <div class="service-content">
-              <h4>אינטגרציה ופרויקט מקצה לקצה</h4>
-              <p>הקמה, חיבור לכלל מערכות המחסן (WMS, ERP, ציוד קיים) והפעלה — הכל בחוזה אחד, אחריות אחת.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-num">04</div>
-            <div class="service-content">
-              <h4>תמיכה ושירות 24/7</h4>
-              <p>מהנדסי שירות ישראליים בשטח ובמוקד. חוזי תמיכה מותאמים — תגובה מהירה, SLA מוגדר מראש.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-num">05</div>
-            <div class="service-content">
-              <h4>שדרוגים ומחסנים קיימים</h4>
-              <p>אוטומציה של מחסן פעיל ללא הפסקת פעילות — שדרוג הדרגתי, אינטגרציה עם ציוד קיים.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-num">06</div>
-            <div class="service-content">
-              <h4>ניהול נתונים ובינה מלאכותית</h4>
-              <p>ניתוח ביצועי מחסן בזמן אמת, דשבורדים לניהול ועיבוד נתונים לשיפור מתמיד של תהליכים.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab3-cta">
-      <div class="wrap">
-        <a href="#contact" class="btn-primary">לבחינת הפתרון המתאים לכם</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- WHY UTRON -->
 <section class="why-utron">
@@ -1310,19 +1036,7 @@ footer {
   <div class="footer-text">יוטרון אוטומציה | כל הזכויות שמורות | פתרונות מחסן אוטומטי ©</div>
 </footer>
 
-<!-- TABS JS -->
-<script>
-document.querySelectorAll('.tab-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var target = this.dataset.tab;
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
-    this.classList.add('active');
-    document.getElementById(target).classList.add('active');
-    document.getElementById('tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-</script>
+
 
 </body>
 </html>
